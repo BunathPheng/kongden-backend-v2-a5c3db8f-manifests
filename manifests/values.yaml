@@ -1,0 +1,11 @@
+namespace: smartops-api
+
+image:
+  imageRepository: docker.io/phengbunath/kongden-backend-v2-a5c3db8f
+  tag: 1
+
+service:
+  type: ClusterIP
+  port: 8080
+  targetPort: 8080
+
