@@ -1,0 +1,26 @@
+---
+# Source: helm for kubernetes/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kongden-backend-v2-a5c3db8f
+  labels:
+    app: kongden-backend-v2-a5c3db8f
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: kongden-backend-v2-a5c3db8f
+  template:
+    metadata:
+      labels:
+        app: kongden-backend-v2-a5c3db8f
+    spec:
+      serviceAccountName: ingress-manager
+      containers:
+        - name: kongden-backend-v2-a5c3db8f
+          image: docker.io/phengbunath/kongden-backend-v2-a5c3db8f:1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
